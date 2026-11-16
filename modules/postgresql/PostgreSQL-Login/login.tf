@@ -16,6 +16,7 @@ resource "postgresql_role" "role" {
   password         = var.password
   roles            = var.roles
   inherit          = var.inherit
+  search_path      = length(var.search_path) > 0 ? var.search_path : null
 }
 
 resource "postgresql_grant" "permissions" {

@@ -42,6 +42,12 @@ variable "inherit" {
   type        = bool
   default     = true
 }
+variable "search_path" {
+  description = "Default search path for the role. Applied as ALTER ROLE ... SET search_path TO ..."
+  type        = list(string)
+  default     = []
+}
+
 variable "permissions" {
   description = "Map of permissions to be granted to the PostgreSQL user."
   type = map(object({
